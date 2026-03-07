@@ -30,6 +30,7 @@
 
     <section class="content-section">
         <div class="container">
+            <!-- Onglets pour séparer entreprise et école -->
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab('entreprise')">
                     En Entreprise
@@ -39,6 +40,7 @@
                 </button>
             </div>
 
+            <!-- Missions en entreprise -->
             <div id="entreprise" class="tab-content active">
                 <div class="missions-intro">
                     <h2>Missions réalisées en entreprise</h2>
@@ -63,9 +65,7 @@
                             <div class="mission-tags">
                                 <span class="tag-small">Windows Server</span>
                             </div>
-                            <a href="docs//serveur-windows-2025.pdf" class="btn-compte-rendu" target="_blank">
-                                📄 Voir le compte rendu
-                            </a>
+                            <a href="comptes-rendus/serveur-windows-2025.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
                         </div>
 
                         <div class="mission-item">
@@ -82,23 +82,163 @@
                                 <span class="tag-small">PHP</span>
                                 <span class="tag-small">MySQL</span>
                             </div>
-                            <a href="docs/serveur-web.pdf" class="btn-compte-rendu" target="_blank">
-                                📄 Voir le compte rendu
-                            </a>
+                            <a href="comptes-rendus/serveur-web.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
                         </div>
 
                         <div class="mission-item">
-                            <h4>Mise en place d'un partage de fichiers</h4>
+                            <h4>Migration et mise à jour du service GLPI</h4>
+                            <p><strong>Contexte :</strong> Renouvellement du service GLPI qui n'était plus à jour. Ajout de plugin pour améliorer l'expérience utilisateur, que ce soit du côté agent qu'administrateur</p>
+                            <p><strong>Actions réalisées :</strong></p>
                             <ul>
+                                <li>Installation et mise en place de la politique de sécurité de la e.SNCF</li>
+                                <li>Création d'un RAID</li>
+                            </ul>
+                            <div class="mission-tags">
+                                <span class="tag-small">Windows Server</span>
+                            </div>
+                            <a href="comptes-rendus/glpi.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4>Automation de tâches administratives</h4>
+                            <p><strong>Contexte :</strong> Automatisation de tâches répétitives pour améliorer l'efficacité et la qualité de vie au travail. Principalement l'extraction de donnée pour mettre à jour des PowerBI ou générer des CSV</p>
+                            <p><strong>Actions réalisées :</strong></p>
+                            <ul>
+                                <li>Script en Python pour automatiser des tâches administratives</li>
+                                <li>Requêtes SQL</li>
+                                <li>PowerBI</li>
+                            </ul>
+                            <div class="mission-tags">
+                                <span class="tag-small">Windows Server</span>
+                            </div>
+                            <a href="comptes-rendus/automation.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-category">
+                    <h3>👥 Support Utilisateurs</h3>
+                    <div class="mission-list">
+                        <div class="mission-item">
+                            <h4>Ticketing</h4>
+                            <p><strong>Contexte :</strong> Gestion des demandes et incidents des utilisateurs via un système de ticketing (GLPI)</p>
+                            <p><strong>Actions réalisées :</strong></p>
+                            <ul>
+                                <li>Résolution d'incidents informatiques</li>
+                                <li>Assistance aux utilisateurs</li>
+                                <li>Gestion des tickets</li>
+                                <li>Formation des utilisateurs</li>
+                            </ul>
+                            <div class="mission-tags">
+                                <span class="tag-small">Support</span>
+                                <span class="tag-small">Ticketing</span>
+                                <span class="tag-small">GLPI</span>
+                            </div>
+                            <a href="comptes-rendus/ticketing.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4>Gestion de Droits NTFS</h4>
+                            <p><strong>Contexte :</strong> Accord de droit sur le serveur de fichiers interne</p>
+                            <p><strong>Actions réalisées :</strong></p>
+                            <ul>
+                                <li>Vérification des permissions existantes pour assurer leur conformité</li>
+                                <li>Gestion des groupes de sécurité pour contrôler l'accès aux dossiers partagés</li>
+                                <li>Vérification de conformité des demande de droit</li>
+                            </ul>
+                            <div class="mission-tags">
+                                <span class="tag-small">Windows Server</span>
+                                <span class="tag-small">Active Directory</span>
+                            </div>
+                            <a href="comptes-rendus/ntfs.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mission-category">
+                    <h3>💡 Gestion de projets</h3>
+                    <div class="mission-list">
+                        <div class="mission-item">
+                            <h4>Projet pôle QSE</h4>
+                            <p><strong>Contexte :</strong> Gestion d'un projet pour identifier les cas de risque SST plus facilement</p>
+                            <p><strong>Actions réalisées :</strong></p>
+                            <ul>
+                                <li>Pilotage de Réunions</li>
+                                <li>Définition des solutions à mettre en place et suivi des avancements</li>
+                                <li>Création de Dashboards pour nos deux GLPI afin que des agents du pôle QSE puissent identifier plus facilement les cas de risque SST</li>
+                            </ul>
+                            <div class="mission-tags">
+                                <span class="tag-small">Gestion de Projets</span>
+                                <span class="tag-small">Python</span>
+                                <span class="tag-small">GLPI</span>
+                            </div>
+                            <a href="comptes-rendus/projet-qse-sst.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4>Projet pôle QSE</h4>
+                            <p><strong>Contexte :</strong> Participation au projet de réhabilitation du système de vidéosurveillance du technicentre. Certaines caméras ne fonctionnaient plus ou ne transmettaient plus de flux vidéo. Certaines caméras n'avaient pas été installées par le prestataire initial. </p>
+                            <p><strong>Actions réalisées :</strong></p>
+                            <ul>
+                                <li>Réunions</li>
+                                <li>Collaboration avec l'équipe bâtiment pour l'installation dans des environnements spécifiques</li>
+                                <li>Collaboration avec le pôle sûreté pour assurer la conformité et la sécurité des installations</li>
+                                <li>Réparation de certaines caméras</li>
+                            </ul>
+                            <div class="mission-tags">
+                                <span class="tag-small">Participation à un Projet</span>
+                                <span class="tag-small">Réparation de certaines caméras</span>
+                                <span class="tag-small">Formation électrique</span>
+                            </div>
+                            <a href="comptes-rendus/projet-qse-cameras.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missions à l'école -->
+            <div id="ecole" class="tab-content">
+                <div class="missions-intro">
+                    <h2>Activités réalisées à l'école</h2>
+                    <p>
+                        Travaux pratiques et projets réalisés dans le cadre de ma formation.
+                    </p>
+                </div>
+
+                <div class="mission-category">
+                    <h3>🔬 Travaux Pratiques</h3>
+                    <div class="mission-list">
+                        <div class="mission-item">
+                            <h4>Installation classique d'un Serveur Windows (2019)</h4>
+                            <p><strong>Objectifs pédagogiques : </strong></p>
+                            <ul>
+                                <li>Installer un OS (Windows Server 2019)</li>
+                                <li>Mettre en place un DNS, AD DS et DHCP</li>
+                                <li>Liaison d'un windows client pour tests</li>
+                            </ul>
+                            <p><strong>Technologies utilisées :</strong></p>
+                            <div class="mission-tags">
+                                <span class="tag-small">Windows Server</span>
+                                <span class="tag-small">Active Directory</span>
+                            </div>
+                            <a href="comptes-rendus/ecole-serveur-windows.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4>Gestion de droits NTFS</h4>
+                            <p><strong>Objectifs pédagogiques :</strong></p>
+                            <ul>
+                                <li>Création et gestion de groupes selon la politique AGDLP</li>
+                                <li>Notion de moindre privilège</li>
                                 <li>Mise en place d'un partage de fichiers</li>
                             </ul>
                             <div class="mission-tags">
                                 <span class="tag-small">Windows Server</span>
                                 <span class="tag-small">Active Directory</span>
                             </div>
-                            <a href="docs/partage-fichiers.pdf" class="btn-compte-rendu" target="_blank">
-                                📄 Voir le compte rendu
-                            </a>
+                            <a href="comptes-rendus/ecole-ntfs.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
                         </div>
 
                         <div class="mission-item">
@@ -114,14 +254,12 @@
                                 <span class="tag-small">Active Directory</span>
                                 <span class="tag-small">NFS</span>
                             </div>
-                            <a href="docs/fiche mission E5 - Droits NTFS.pdf" class="btn-compte-rendu" target="_blank">
-                                📄 Voir le compte rendu
-                            </a>
+                            <a href="comptes-rendus/ecole-nfs.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
                         </div>
 
                         <div class="mission-item">
                             <h4>Mise en place de GPO</h4>
-                            <p><strong>Objectifs pédagogiques : Mettre en place des GPO pour certains employés uniquement.</strong></p>
+                            <p><strong>Objectifs pédagogiques : Mettre en place des GPO pour certains employés uniquement. Mise en place de GPO pour empêcher l'accès au panneau de configuration et faire apparaitre le raccourcis de partage NFS pour le bon pôle de chaque utilisateur.</strong></p>
                             <ul>
                                 <li>Prise en main de l'outil de gestion des stratégies de groupe (GPO)</li>
                                 <li>Interdictions des GPO pour certains utilisateurs</li>
@@ -132,11 +270,8 @@
                                 <span class="tag-small">Active Directory</span>
                                 <span class="tag-small">GPO</span>
                             </div>
-                            <a href="docs/gpo.pdf" class="btn-compte-rendu" target="_blank">
-                                📄 Voir le compte rendu
-                            </a>
+                            <a href="comptes-rendus/ecole-gpo.pdf" class="btn-compte-rendu" target="_blank">📄 Voir le compte rendu</a>
                         </div>
-
                     </div>
                 </div>
 
@@ -164,16 +299,19 @@
 
     <script>
         function showTab(tabName) {
+            // Cacher tous les contenus
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => {
                 content.classList.remove('active');
             });
 
+            // Désactiver tous les boutons
             const buttons = document.querySelectorAll('.tab-button');
             buttons.forEach(button => {
                 button.classList.remove('active');
             });
 
+            // Afficher le contenu sélectionné
             document.getElementById(tabName).classList.add('active');
             event.target.classList.add('active');
         }
