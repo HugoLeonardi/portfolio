@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet 2 - Déploiement Nextcloud sur AWS</title>
+    <title>Projet 1 - Déploiement Automatisé Nextcloud sur AWS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,66 +29,70 @@
 
     <section class="project-detail-header">
         <div class="container">
-            <div class="project-badge-large projet-2">Projet 2</div>
-            <h1>Déploiement Cloud Nextcloud sur AWS</h1>
+            <div class="project-badge-large">Projet 1</div>
+            <h1>Déploiement Automatisé Nextcloud sur AWS</h1>
             <p class="project-subtitle">Infrastructure as Code (IaC) avec Terraform — Architecture trois tiers</p>
+            <a href="docs/Compte rendu Projet Nextcloud Terraform.pdf" target="_blank" class="btn btn-primary">📄 Télécharger le PDF</a>
         </div>
     </section>
 
     <section class="project-detail-content">
         <div class="container">
 
-            <!-- Informations générales -->
-            <div class="content-card project-meta-full">
-                <div class="meta-item">
-                    <span class="meta-icon">📅</span>
-                    <div>
-                        <strong>Période</strong>
-                        <p>Février 2026</p>
+            <!-- Fiche synthèse -->
+            <div class="content-card project-meta-detail">
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Durée</span>
+                        <span class="meta-value">3 semaines</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Contexte</span>
+                        <span class="meta-value">Formation BTS SIO SISR</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Région AWS</span>
+                        <span class="meta-value">eu-west-3 (Paris)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Instance</span>
+                        <span class="meta-value">EC2 T3.small</span>
                     </div>
                 </div>
-                <div class="meta-item">
-                    <span class="meta-icon">🏢</span>
-                    <div>
-                        <strong>Contexte</strong>
-                        <p>Mission E6 — BTS SIO SISR</p>
-                    </div>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-icon">☁️</span>
-                    <div>
-                        <strong>Environnement</strong>
-                        <p>AWS Cloud</p>
-                    </div>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-icon">🛠️</span>
-                    <div>
-                        <strong>Rôle</strong>
-                        <p>Administrateur Système & Cloud</p>
-                    </div>
+                <div class="tech-tags">
+                    <span class="tag">Terraform</span>
+                    <span class="tag">AWS EC2</span>
+                    <span class="tag">AWS RDS MySQL</span>
+                    <span class="tag">AWS S3</span>
+                    <span class="tag">IAM</span>
+                    <span class="tag">Amazon Linux 2023</span>
+                    <span class="tag">Apache</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Nextcloud</span>
+                    <span class="tag">Bash</span>
                 </div>
             </div>
 
-            <!-- Contexte & Problématique -->
+            <!-- Contexte et problématique -->
             <div class="content-card">
-                <h2>📋 Contexte et Problématique</h2>
+                <h2>🎯 Contexte et Problématique</h2>
+
+                <h3>Situation initiale</h3>
                 <p class="text-block">
-                    Dans le cadre de ma formation BTS SIO SISR, j'ai réalisé ce projet pour répondre à une problématique concrète 
-                    rencontrée en entreprise : comment mettre en place une solution de stockage et de partage de fichiers 
-                    (<strong>Nextcloud</strong>) sur le Cloud, de façon automatisée, sécurisée et reproductible ?
-                </p>
-                <p class="text-block">
-                    L'enjeu était d'aller au-delà d'un déploiement manuel classique et d'adopter une approche 
-                    <strong>Infrastructure as Code (IaC)</strong> avec Terraform, qui est aujourd'hui le standard dans les 
-                    équipes DevOps et les services informatiques. Chaque ressource AWS (réseau, serveur, base de données, stockage) 
-                    est décrite dans des fichiers de code versionnables et réutilisables.
+                    Dans le cadre de ma mission E6, j'ai eu à répondre à un besoin de
+                    stockage collaboratif sécurisé pour une entreprise. La solution devait
+                    permettre le partage de fichiers entre collaborateurs, sans dépendre
+                    d'un serveur physique sur site (on-premise), tout en garantissant la
+                    confidentialité des données. Le déploiement devait être entièrement
+                    automatisé et reproductible.
                 </p>
 
-                <div class="highlight-box">
-                    <strong>🎯 Problématique :</strong> Comment déployer une infrastructure Nextcloud fiable, sécurisée et 
-                    reproductible sur AWS, en moins de 15 minutes, sans aucune intervention manuelle ?
-                </div>
+                <h3>Problématique</h3>
+                <p class="text-block">
+                    Comment déployer une infrastructure Nextcloud complète et sécurisée sur AWS,
+                    en séparant les couches applicative, base de données et stockage,
+                    de façon reproductible et sans aucune intervention manuelle ?
+                </p>
             </div>
 
             <!-- Objectifs -->
@@ -98,169 +102,261 @@
                     <div class="objective-item">
                         <div class="objective-number">1</div>
                         <h4>Infrastructure as Code</h4>
-                        <p>Décrire et provisionner l'intégralité de l'infrastructure AWS via Terraform (VPC, EC2, RDS, S3, IAM).</p>
+                        <p>Provisionner l'ensemble des ressources AWS (VPC, EC2, RDS, S3, IAM) via Terraform de façon déclarative et versionnable.</p>
                     </div>
                     <div class="objective-item">
                         <div class="objective-number">2</div>
                         <h4>Architecture trois tiers</h4>
-                        <p>Séparer clairement les couches : serveur web (EC2), base de données (RDS MySQL) et stockage fichiers (S3).</p>
+                        <p>Séparer les couches web (EC2), base de données (RDS MySQL) et stockage fichiers (S3) pour la sécurité et la scalabilité.</p>
                     </div>
                     <div class="objective-item">
                         <div class="objective-number">3</div>
-                        <h4>Sécurité & Moindre Privilège</h4>
-                        <p>Utiliser les rôles IAM pour l'accès S3 (sans clé en dur), isoler la BDD en sous-réseau privé, filtrer les flux réseau.</p>
+                        <h4>Sécurité Cloud</h4>
+                        <p>Appliquer le principe de moindre privilège via les Security Groups (filtrage réseau) et les rôles IAM (accès S3 sans clé en dur).</p>
                     </div>
                     <div class="objective-item">
                         <div class="objective-number">4</div>
                         <h4>Automatisation complète</h4>
-                        <p>Installer et configurer Nextcloud automatiquement via un script User Data au premier démarrage du serveur.</p>
+                        <p>L'installation de Nextcloud et sa configuration sont entièrement réalisées par un script Bash injecté via le mécanisme user_data d'AWS.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Architecture -->
+            <!-- Choix de la solution -->
+            <div class="content-card">
+                <h2>🔍 Choix de la Solution</h2>
+
+                <h3>Solutions envisagées</h3>
+
+                <div class="solution-comparison">
+                    <div class="solution-card">
+                        <h4>Solution 1 : Serveur physique on-premise</h4>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <strong>✅ Avantages :</strong>
+                                <ul>
+                                    <li>Contrôle total du matériel.</li>
+                                    <li>Pas de coût d'abonnement Cloud.</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <strong>❌ Inconvénients :</strong>
+                                <ul>
+                                    <li>Coût matériel initial élevé.</li>
+                                    <li>Maintenance physique nécessaire.</li>
+                                    <li>Pas de redondance native.</li>
+                                    <li>Déploiement manuel et non reproductible.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card solution-selected">
+                        <div class="solution-badge">✓ Retenue</div>
+                        <h4>Solution 2 : Infrastructure as Code sur AWS (Terraform)</h4>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <strong>✅ Avantages :</strong>
+                                <ul>
+                                    <li>Déploiement ultra-rapide et identique à chaque lancement.</li>
+                                    <li>Versionning du code infrastructure (Git).</li>
+                                    <li>Services managés AWS (RDS) : sauvegardes et patches automatiques.</li>
+                                    <li>Stockage S3 découplé de l'instance EC2 : les fichiers survivent à la recréation du serveur.</li>
+                                    <li>Correspond aux standards actuels du marché (DevOps, Cloud).</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <strong>❌ Inconvénients :</strong>
+                                <ul>
+                                    <li>Courbe d'apprentissage (HCL, concepts AWS).</li>
+                                    <li>Coût AWS à surveiller.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-block">
+                            <strong>Justification du choix :</strong>
+                            L'approche IaC garantit que l'infrastructure est toujours déployée
+                            avec la même configuration validée. Elle correspond aux pratiques
+                            DevOps actuelles et permet une reprise rapide en cas d'incident.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture technique -->
             <div class="content-card">
                 <h2>🏗️ Architecture Technique</h2>
+
+                <h3>Vue d'ensemble</h3>
                 <p class="text-block">
-                    L'architecture repose sur le principe de <strong>séparation des couches</strong>. 
-                    Chaque service a une responsabilité unique, ce qui facilite la maintenance, la scalabilité et la sécurité.
+                    L'infrastructure repose sur une architecture <strong>trois tiers</strong> déployée dans
+                    un VPC (Virtual Private Cloud) dédié sur la région AWS <strong>eu-west-3 (Paris)</strong>.
+                    Ce VPC isole complètement notre infrastructure du reste d'AWS et d'Internet,
+                    sauf pour les flux explicitement autorisés par les Security Groups.
                 </p>
 
-                <!-- Schéma -->
+                <!-- Emplacement schéma architecture -->
                 <div class="schema-container">
-                    <img src="images/infrastructure_nextcloud.png" alt="Schéma architecture AWS Nextcloud" class="schema-img">
-                    <p class="schema-caption">Schéma de l'infrastructure AWS — Architecture trois tiers Nextcloud</p>
+                    <img src="images/architecture_nextcloud.png" alt="Schéma architecture Nextcloud AWS" class="schema-img">
+                    <p class="schema-caption">Schéma de l'architecture trois tiers déployée sur AWS (VPC, EC2, RDS, S3)</p>
                 </div>
 
-                <div class="architecture-layers">
-                    <div class="arch-layer">
-                        <div class="arch-layer-icon">🌐</div>
-                        <div class="arch-layer-content">
-                            <h4>Couche Réseau — VPC & Security Groups</h4>
-                            <p>
-                                Un <strong>VPC (Virtual Private Cloud)</strong> isole l'infrastructure du reste d'AWS sur le plan réseau 
-                                (CIDR <code>10.0.0.0/16</code>). Il contient plusieurs sous-réseaux :
-                            </p>
-                            <ul>
-                                <li><strong>Subnet public</strong> : héberge l'EC2, accessible depuis Internet (ports 80 et 22 uniquement).</li>
-                                <li><strong>Subnets privés</strong> (x2, dans 2 zones de disponibilité différentes) : hébergent RDS, inaccessibles depuis l'extérieur.</li>
-                            </ul>
-                            <p>
-                                Le <strong>Security Group</strong> joue le rôle de pare-feu : il n'autorise que le HTTP (port 80) 
-                                et le SSH (port 22) en entrée. Toute autre connexion est bloquée par défaut.
-                            </p>
-                        </div>
-                    </div>
+                <h3>Couche réseau — VPC et sous-réseaux</h3>
+                <p class="text-block">
+                    Le VPC (10.0.0.0/16) est découpé en <strong>trois sous-réseaux</strong> aux rôles bien distincts :
+                </p>
+                <ul>
+                    <li>
+                        <strong>Sous-réseau public (10.0.1.0/24)</strong> : contient l'instance EC2 qui héberge Nextcloud.
+                        Elle est la seule ressource exposée à Internet, uniquement sur les ports 80 (HTTP) et 22 (SSH).
+                        Un Internet Gateway permet les flux entrants et sortants.
+                    </li>
+                    <li>
+                        <strong>Sous-réseau privé 1 (10.0.2.0/24)</strong> : héberge le premier nœud RDS.
+                        Aucune route vers Internet : la base de données est totalement isolée.
+                    </li>
+                    <li>
+                        <strong>Sous-réseau privé 2 (10.0.3.0/24)</strong> : second sous-réseau privé requis par AWS RDS,
+                        qui impose obligatoirement deux zones de disponibilité (AZ) différentes pour garantir la haute disponibilité.
+                    </li>
+                </ul>
 
-                    <div class="arch-layer">
-                        <div class="arch-layer-icon">🖥️</div>
-                        <div class="arch-layer-content">
-                            <h4>Couche Application — EC2 (t3.micro)</h4>
-                            <p>
-                                L'instance <strong>EC2 t3.micro</strong> sous Amazon Linux 2023 héberge le serveur web Apache, 
-                                PHP 8.2 et l'application Nextcloud. Elle est configurée automatiquement au premier démarrage 
-                                via un script <strong>User Data</strong> (Bash).
-                            </p>
-                            <p>
-                                Un <strong>rôle IAM</strong> est attaché à cette instance, lui permettant d'accéder au bucket S3 
-                                sans avoir besoin de stocker des clés AWS dans le code — ce qui est une bonne pratique de sécurité fondamentale.
-                            </p>
-                        </div>
-                    </div>
+                <h3>Couche applicative — EC2</h3>
+                <p class="text-block">
+                    L'instance EC2 de type <strong>T3.small</strong> (2 vCPU, 2 Go RAM) tourne sous
+                    <strong>Amazon Linux 2023</strong>. Elle héberge le serveur web Apache et l'application Nextcloud (PHP).
+                    Au premier démarrage, le script <code>userdata.sh</code> est automatiquement exécuté par AWS :
+                    il installe Apache, PHP, télécharge Nextcloud, et configure la connexion à RDS et S3.
+                    Aucune connexion SSH manuelle n'est nécessaire pour l'installation.
+                </p>
 
-                    <div class="arch-layer">
-                        <div class="arch-layer-icon">🗄️</div>
-                        <div class="arch-layer-content">
-                            <h4>Couche Données — RDS MySQL 8.0</h4>
-                            <p>
-                                La base de données est hébergée sur <strong>AWS RDS</strong>, un service de base de données managé. 
-                                Cela signifie qu'AWS gère automatiquement les sauvegardes, les patches de sécurité et la disponibilité.
-                            </p>
-                            <p>
-                                RDS est placé dans les <strong>subnets privés</strong> : il est accessible uniquement par l'EC2 
-                                (via le port 3306), jamais depuis Internet. AWS exige au minimum 2 subnets dans 2 zones de 
-                                disponibilité différentes pour créer un <strong>DB Subnet Group</strong>.
-                            </p>
-                        </div>
-                    </div>
+                <h3>Couche base de données — RDS MySQL</h3>
+                <p class="text-block">
+                    La base de données MySQL est hébergée sur <strong>AWS RDS</strong> (service managé),
+                    et non directement sur l'EC2. Ce choix apporte des avantages importants par rapport
+                    à une installation classique : sauvegardes automatiques quotidiennes, application
+                    automatique des patches de sécurité, et monitoring intégré via CloudWatch.
+                    RDS est placé dans les sous-réseaux privés : <strong>il est uniquement joignable
+                    depuis l'EC2</strong>, jamais depuis Internet. Le Security Group associé à RDS
+                    n'autorise les connexions sur le port 3306 que depuis le Security Group de l'EC2.
+                </p>
 
-                    <div class="arch-layer">
-                        <div class="arch-layer-icon">🪣</div>
-                        <div class="arch-layer-content">
-                            <h4>Couche Stockage — AWS S3</h4>
-                            <p>
-                                Les fichiers des utilisateurs Nextcloud sont stockés dans un <strong>bucket S3</strong> 
-                                plutôt que sur le disque local de l'EC2. Cette approche présente plusieurs avantages :
-                            </p>
-                            <ul>
-                                <li>Stockage <strong>pratiquement illimité</strong> et hautement disponible.</li>
-                                <li>Les fichiers <strong>survivent</strong> à la destruction/recréation du serveur EC2.</li>
-                                <li>Coût optimisé : on ne paye que ce qu'on stocke réellement.</li>
-                            </ul>
-                            <p>
-                                L'accès S3 est sécurisé via un <strong>rôle IAM</strong> avec des permissions minimales 
-                                (GetObject, PutObject, DeleteObject, ListBucket sur ce bucket uniquement).
-                            </p>
-                        </div>
-                    </div>
+                <h3>Couche stockage — S3 et IAM</h3>
+                <p class="text-block">
+                    Les fichiers des utilisateurs Nextcloud ne sont pas stockés sur le disque de l'EC2
+                    (qui serait perdu en cas de recréation de l'instance), mais dans un <strong>bucket S3</strong>
+                    dédié. Nextcloud est configuré pour utiliser S3 comme backend de stockage objet.
+                </p>
+                <p class="text-block">
+                    L'accès de l'EC2 au bucket S3 est sécurisé via un <strong>rôle IAM</strong>
+                    (Instance Profile). Ce rôle accorde à l'EC2 les droits de lecture, écriture et
+                    suppression uniquement sur ce bucket précis. Il n'y a <strong>aucune clé AWS
+                    (Access Key / Secret Key) stockée sur le serveur</strong> : l'EC2 obtient ses
+                    permissions automatiquement via le rôle attaché, ce qui élimine le risque de fuite
+                    de credentials.
+                </p>
+
+                <h3>Récapitulatif des ressources Terraform</h3>
+                <div class="code-example">
+                    <pre><code># Réseau
+aws_vpc                    → VPC dédié (10.0.0.0/16)
+aws_subnet (x3)            → 1 public + 2 privés
+aws_internet_gateway       → Accès Internet pour l'EC2
+aws_route_table            → Routage du sous-réseau public
+
+# Sécurité réseau
+aws_security_group (EC2)   → Ports 80 et 22 ouverts depuis Internet
+aws_security_group (RDS)   → Port 3306 ouvert depuis EC2 uniquement
+
+# Calcul
+aws_instance               → EC2 T3.small Amazon Linux 2023
+
+# Base de données
+aws_db_subnet_group        → Groupe de sous-réseaux privés pour RDS
+aws_db_instance            → RDS MySQL managé
+
+# Stockage
+aws_s3_bucket              → Stockage des fichiers Nextcloud
+
+# Identité et accès
+aws_iam_role               → Rôle assumable par EC2
+aws_iam_role_policy        → Droits S3 limités au bucket du projet
+aws_iam_instance_profile   → Lien entre le rôle et l'instance EC2</code></pre>
                 </div>
             </div>
 
             <!-- Réalisation -->
             <div class="content-card">
-                <h2>⚙️ Réalisation Technique</h2>
+                <h2>⚙️ Réalisation</h2>
 
-                <h3>Organisation des fichiers Terraform</h3>
+                <h3>Méthodologie</h3>
                 <p class="text-block">
-                    Le projet est structuré en plusieurs fichiers Terraform, chacun ayant un rôle précis. 
-                    Cette organisation est une bonne pratique qui facilite la lisibilité et la maintenance.
+                    Le projet a été découpé en trois phases : écriture du code infrastructure (HCL Terraform),
+                    écriture du script de provisionnement (Bash), puis déploiement et tests.
                 </p>
 
-                <div class="file-structure">
-                    <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <div>
-                            <strong>main.tf</strong>
-                            <p>Ressources principales : VPC, subnets, EC2, RDS, S3, IAM. Cœur de l'infrastructure.</p>
+                <div class="timeline-phases">
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <span class="phase-number">Phase 1</span>
+                            <span class="phase-duration">Infrastructure</span>
                         </div>
+                        <h4>Codage Terraform</h4>
+                        <ul>
+                            <li>Définition du provider AWS (région eu-west-3 — Paris).</li>
+                            <li>Création du VPC, des trois sous-réseaux, de l'Internet Gateway et des tables de routage.</li>
+                            <li>Configuration des Security Groups EC2 et RDS.</li>
+                            <li>Définition de l'instance EC2, du groupe de sous-réseaux RDS et de l'instance RDS MySQL.</li>
+                            <li>Création du bucket S3 et du rôle IAM avec sa politique d'accès.</li>
+                        </ul>
                     </div>
-                    <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <div>
-                            <strong>variables.tf</strong>
-                            <p>Déclaration de toutes les variables (région, noms, CIDR...). Permet de personnaliser sans toucher au code principal.</p>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <span class="phase-number">Phase 2</span>
+                            <span class="phase-duration">Provisionnement</span>
                         </div>
+                        <h4>Script userdata.sh</h4>
+                        <ul>
+                            <li>Installation automatique d'Apache, PHP et des extensions requises par Nextcloud.</li>
+                            <li>Téléchargement et déploiement de Nextcloud dans le répertoire web Apache.</li>
+                            <li>Configuration de la connexion à RDS MySQL (endpoint injecté par Terraform).</li>
+                            <li>Configuration du stockage objet S3 via le rôle IAM de l'instance (sans clé en dur).</li>
+                            <li>Configuration dynamique des trusted_domains avec l'IP publique récupérée depuis le service de métadonnées AWS (169.254.169.254).</li>
+                        </ul>
                     </div>
-                    <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <div>
-                            <strong>outputs.tf</strong>
-                            <p>Affiche les informations utiles après déploiement : IP publique, URL Nextcloud, endpoint RDS.</p>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <span class="phase-number">Phase 3</span>
+                            <span class="phase-duration">Déploiement</span>
                         </div>
+                        <h4>Terraform Apply</h4>
+                        <ul>
+                            <li>Initialisation des providers (<code>terraform init</code>).</li>
+                            <li>Planification et vérification des ressources à créer (<code>terraform plan</code>).</li>
+                            <li>Déploiement complet de l'infrastructure (<code>terraform apply</code>).</li>
+                            <li>Récupération automatique des outputs : URL Nextcloud, IP publique, endpoint RDS, nom du bucket S3.</li>
+                        </ul>
                     </div>
-                    <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <div>
-                            <strong>userdata.sh</strong>
-                            <p>Script Bash exécuté automatiquement au 1er démarrage de l'EC2. Installe Apache, PHP, Nextcloud et configure tout.</p>
-                        </div>
-                    </div>
+
                 </div>
 
-                <h3>Points techniques clés</h3>
+                <h3>Extraits de code significatifs</h3>
 
-                <h4>1. Sécurité IAM — Accès S3 sans clé en dur</h4>
+                <h4>1. Rôle IAM — Accès S3 sans clé (main.tf)</h4>
                 <p class="text-block">
-                    C'est l'un des points les plus importants du projet. Plutôt que de stocker des clés AWS dans la configuration 
-                    de Nextcloud (mauvaise pratique, risque de fuite), un <strong>rôle IAM</strong> est attaché directement à l'instance EC2.
-                    Nextcloud utilise automatiquement les credentials de l'instance sans qu'aucune clé n'apparaisse dans le code.
+                    Le rôle IAM est la pièce maîtresse de la sécurité du projet.
+                    L'EC2 assume ce rôle automatiquement au démarrage, ce qui lui permet
+                    d'accéder à S3 sans qu'aucune clé ne soit stockée sur le serveur.
                 </p>
                 <div class="code-example">
-                    <div class="code-label">main.tf — Rôle IAM et politique S3</div>
-                    <pre><code># Rôle IAM : seul EC2 peut l'assumer
-resource "aws_iam_role" "ec2_s3_role" {
+                    <pre><code>resource "aws_iam_role" "ec2_s3_role" {
   name = "${var.project_name}-ec2-role"
+
   assume_role_policy = jsonencode({
+    Version = "2012-10-17"
     Statement = [{
       Action    = "sts:AssumeRole"
       Effect    = "Allow"
@@ -269,9 +365,12 @@ resource "aws_iam_role" "ec2_s3_role" {
   })
 }
 
-# Politique : accès limité à CE bucket uniquement
 resource "aws_iam_role_policy" "ec2_s3_policy" {
+  name = "${var.project_name}-s3-policy"
+  role = aws_iam_role.ec2_s3_role.id
+
   policy = jsonencode({
+    Version = "2012-10-17"
     Statement = [{
       Effect = "Allow"
       Action = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject", "s3:ListBucket"]
@@ -281,194 +380,142 @@ resource "aws_iam_role_policy" "ec2_s3_policy" {
       ]
     }]
   })
-}</code></pre>
-                </div>
-
-                <h4>2. Isolation réseau — RDS en sous-réseau privé</h4>
-                <p class="text-block">
-                    La base de données ne doit jamais être accessible depuis Internet. Elle est placée dans des subnets privés 
-                    et un Security Group dédié n'autorise les connexions MySQL (port 3306) qu'en provenance de l'EC2.
-                    AWS oblige à créer un <strong>DB Subnet Group</strong> avec au minimum 2 sous-réseaux dans 2 zones de disponibilité.
-                </p>
-                <div class="code-example">
-                    <div class="code-label">main.tf — DB Subnet Group et Security Group RDS</div>
-                    <pre><code># Groupe de subnets pour RDS (2 AZ minimum obligatoires)
-resource "aws_db_subnet_group" "nextcloud" {
-  subnet_ids = [aws_subnet.private_1.id, aws_subnet.private_2.id]
 }
 
-# Security Group RDS : port 3306 uniquement depuis l'EC2
-resource "aws_security_group" "rds_sg" {
-  ingress {
-    from_port       = 3306
-    to_port         = 3306
-    protocol        = "tcp"
-    security_groups = [aws_security_group.ec2_sg.id]  # EC2 seulement !
-  }
+# Lien entre le rôle et l'instance EC2
+resource "aws_iam_instance_profile" "ec2_profile" {
+  name = "${var.project_name}-ec2-profile"
+  role = aws_iam_role.ec2_s3_role.name
 }</code></pre>
                 </div>
 
-                <h4>3. Configuration automatique — User Data</h4>
+                <h4>2. Configuration du stockage S3 dans Nextcloud (userdata.sh)</h4>
                 <p class="text-block">
-                    Le script <code>userdata.sh</code> est injecté dans l'instance EC2 via Terraform et s'exécute 
-                    automatiquement au premier démarrage. Il installe la stack complète et configure Nextcloud 
-                    sans aucune intervention manuelle, y compris les <strong>trusted_domains</strong> avec l'IP publique réelle.
+                    Nextcloud est configuré pour utiliser S3 comme backend de stockage.
+                    Le paramètre <code>use_instance_credentials = true</code> indique à Nextcloud
+                    d'utiliser le rôle IAM de l'instance plutôt que des clés AWS statiques.
                 </p>
                 <div class="code-example">
-                    <div class="code-label">userdata.sh — Extraits clés</div>
-                    <pre><code>#!/bin/bash
-# Installation de la stack (Apache, PHP 8.2, extensions Nextcloud)
-dnf install -y httpd php php-mysqlnd php-gd php-xml php-mbstring php-zip ...
-
-# Téléchargement et installation de Nextcloud
-wget https://download.nextcloud.com/server/releases/nextcloud-27.1.5.zip
-unzip nextcloud-27.1.5.zip -d /var/www/html/
-chown -R apache:apache /var/www/html/nextcloud
-
-# Configuration du stockage S3 (via rôle IAM, pas de clé !)
-sudo -u apache php occ config:system:set \
+                    <pre><code>sudo -u apache php occ config:system:set \
   objectstore arguments use_instance_credentials \
-  --value=true --type=boolean
-
-# Trusted domains : ajout automatique de l'IP publique réelle
-PUBLIC_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
-sudo -u apache php /var/www/html/nextcloud/occ config:system:set \
-  trusted_domains 1 --value="$PUBLIC_IP"</code></pre>
+  --value=true \
+  --type=boolean</code></pre>
                 </div>
 
-                <h4>4. Outputs Terraform — Résultats après déploiement</h4>
+                <h4>3. Configuration des trusted_domains dynamiques (userdata.sh)</h4>
                 <p class="text-block">
-                    Après un <code>terraform apply</code>, les informations essentielles sont affichées directement 
-                    dans le terminal. Plus besoin de chercher dans la console AWS.
+                    L'IP publique de l'EC2 change à chaque recréation de l'instance.
+                    Ce script récupère l'IP dynamiquement via le service de métadonnées AWS
+                    et la déclare comme domaine de confiance dans Nextcloud.
                 </p>
                 <div class="code-example">
-                    <div class="code-label">Terminal — Résultat après terraform apply</div>
-                    <pre><code>Outputs:
-
-nextcloud_url        = "http://54.123.45.67"
-nextcloud_public_ip  = "54.123.45.67"
-ssh_connection       = "ssh -i ~/.ssh/nextcloud-key.pem ec2-user@54.123.45.67"
-rds_endpoint         = "nextcloud-db.xxxxx.us-east-1.rds.amazonaws.com"
-s3_bucket_name       = "nextcloud-storage-prod-2026"</code></pre>
+                    <pre><code>sudo -u apache php /var/www/html/nextcloud/occ config:system:set \
+  trusted_domains 1 \
+  --value="$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)"</code></pre>
                 </div>
 
-                <h3>Technologies utilisées</h3>
-                <div class="tech-stack">
-                    <div class="tech-item">
-                        <h4>Terraform</h4>
-                        <p>Infrastructure as Code. Provisionne toutes les ressources AWS depuis le code.</p>
-                        <span class="tech-version">Version 1.9.x — HCL</span>
-                    </div>
-                    <div class="tech-item">
-                        <h4>AWS EC2</h4>
-                        <p>Serveur virtuel hébergeant Apache, PHP et Nextcloud.</p>
-                        <span class="tech-version">t3.micro — Amazon Linux 2023</span>
-                    </div>
-                    <div class="tech-item">
-                        <h4>AWS RDS</h4>
-                        <p>Base de données MySQL managée. Sauvegardes automatiques, patches gérés par AWS.</p>
-                        <span class="tech-version">MySQL 8.0</span>
-                    </div>
-                    <div class="tech-item">
-                        <h4>AWS S3</h4>
-                        <p>Stockage objet pour les fichiers Nextcloud. Découplé du serveur pour la pérennité des données.</p>
-                        <span class="tech-version">Stockage objet</span>
-                    </div>
-                    <div class="tech-item">
-                        <h4>AWS IAM</h4>
-                        <p>Gestion des accès et des permissions. Rôle attaché à l'EC2 pour l'accès S3 sans clé.</p>
-                        <span class="tech-version">Principe moindre privilège</span>
-                    </div>
-                    <div class="tech-item">
-                        <h4>Bash Scripting</h4>
-                        <p>Script User Data pour l'installation et la configuration automatique de Nextcloud.</p>
-                        <span class="tech-version">Cloud-init</span>
-                    </div>
+                <h4>4. Outputs Terraform — Informations post-déploiement (outputs.tf)</h4>
+                <p class="text-block">
+                    À la fin du <code>terraform apply</code>, ces outputs affichent directement
+                    dans le terminal toutes les informations nécessaires pour accéder à l'infrastructure.
+                </p>
+                <div class="code-example">
+                    <pre><code>output "nextcloud_url" {
+  value = "http://${aws_instance.nextcloud.public_ip}"
+}
+
+output "ssh_connection" {
+  value = "ssh -i ~/.ssh/${var.key_pair_name}.pem ec2-user@${aws_instance.nextcloud.public_ip}"
+}
+
+output "rds_endpoint" {
+  value = aws_db_instance.nextcloud.address
+}
+
+output "s3_bucket_name" {
+  value = aws_s3_bucket.nextcloud_storage.bucket
+}</code></pre>
                 </div>
-            </div>
 
-            <!-- Difficultés -->
-            <div class="content-card">
-                <h2>🔧 Difficultés Rencontrées et Solutions</h2>
-
+                <h3>Difficultés rencontrées et solutions</h3>
                 <div class="difficulties">
                     <div class="difficulty-item">
-                        <h4>🔴 RDS : 2 subnets dans 2 zones de disponibilité obligatoires</h4>
-                        <p>
-                            <strong>Problème :</strong> Lors de la création du DB Subnet Group pour RDS, 
-                            Terraform retournait une erreur car AWS exige obligatoirement des subnets dans 
-                            au moins 2 zones de disponibilité différentes (ex: us-east-1a et us-east-1b).
-                        </p>
-                        <p>
-                            <strong>Solution :</strong> Création d'un second subnet privé dans une AZ distincte, 
-                            puis regroupement des deux dans le DB Subnet Group. L'utilisation du data source 
-                            <code>aws_availability_zones</code> permet de récupérer dynamiquement les AZ disponibles 
-                            sans les coder en dur.
-                        </p>
+                        <h4>Difficulté : Les deux zones de disponibilité RDS</h4>
+                        <p><strong>Problème :</strong> AWS RDS exige un "DB Subnet Group" contenant des sous-réseaux dans au moins deux zones de disponibilité (AZ) différentes. Avec un seul sous-réseau privé, Terraform renvoyait une erreur au déploiement.</p>
+                        <p><strong>Solution :</strong> Ajout d'un second sous-réseau privé (10.0.3.0/24) dans une deuxième AZ, déclaré dans le DB Subnet Group. Le data source <code>aws_availability_zones</code> permet de récupérer les AZ disponibles dynamiquement.</p>
                     </div>
-
                     <div class="difficulty-item">
-                        <h4>🔴 Erreur trusted_domains au premier accès</h4>
-                        <p>
-                            <strong>Problème :</strong> Nextcloud refusait toutes les connexions avec le message 
-                            "Veuillez contacter votre administrateur" car l'IP publique de l'EC2 n'était pas 
-                            dans la liste des <code>trusted_domains</code>.
-                        </p>
-                        <p>
-                            <strong>Solution :</strong> Ajout dans le script User Data de commandes <code>occ</code> 
-                            qui récupèrent automatiquement l'IP publique via l'API de métadonnées AWS 
-                            (<code>169.254.169.254</code>) et la définissent comme trusted domain au moment de l'installation.
-                        </p>
+                        <h4>Difficulté : Accès S3 sans exposer de clés AWS</h4>
+                        <p><strong>Problème :</strong> Nextcloud nécessite des credentials AWS pour accéder à S3. Stocker une Access Key directement dans le script Bash représente un risque de sécurité majeur (fuite via GitHub, logs, etc.).</p>
+                        <p><strong>Solution :</strong> Utilisation d'un rôle IAM attaché à l'instance EC2 via un Instance Profile. Nextcloud est configuré avec <code>use_instance_credentials = true</code> pour récupérer les credentials temporaires automatiquement depuis le service de métadonnées AWS.</p>
                     </div>
-
                     <div class="difficulty-item">
-                        <h4>🔴 Compatibilité PHP 8.4 avec Nextcloud</h4>
-                        <p>
-                            <strong>Problème :</strong> La version de PHP installée par défaut sur Amazon Linux 2023 
-                            était trop récente et non supportée par Nextcloud 27, causant des erreurs à l'installation.
-                        </p>
-                        <p>
-                            <strong>Solution :</strong> Spécification explicite de PHP 8.2 dans le script User Data 
-                            et vérification de la compatibilité dans la <a href="https://docs.nextcloud.com" target="_blank">documentation officielle Nextcloud</a> 
-                            avant le déploiement.
-                        </p>
+                        <h4>Difficulté : IP publique dynamique et trusted_domains</h4>
+                        <p><strong>Problème :</strong> Nextcloud bloque les accès depuis des domaines non déclarés dans sa configuration <code>trusted_domains</code>. Or l'IP publique de l'EC2 change à chaque <code>terraform apply</code>.</p>
+                        <p><strong>Solution :</strong> Le script userdata.sh interroge le service de métadonnées EC2 (<code>169.254.169.254</code>) pour récupérer l'IP publique au moment du démarrage de l'instance et la déclarer dynamiquement dans la configuration Nextcloud.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Bilan -->
             <div class="content-card">
-                <h2>✅ Bilan et Perspectives</h2>
-
-                <h3>Ce que ce projet m'a apporté</h3>
+                <h2>✅ Bilan</h2>
                 <p class="text-block">
-                    Ce projet m'a permis de maîtriser la logique d'une architecture Cloud multi-services, 
-                    d'appréhender concrètement les enjeux de sécurité réseau (isolation en subnet privé, IAM) 
-                    et de comprendre pourquoi l'Infrastructure as Code est aujourd'hui incontournable dans les 
-                    équipes informatiques : tout est versionnable, reproductible et auditable.
+                    Le projet remplit l'ensemble des objectifs fixés : l'infrastructure Nextcloud est
+                    déployée intégralement par le code, en une seule commande <code>terraform apply</code>.
+                    L'architecture trois tiers garantit l'isolation des composants : la base de données
+                    n'est jamais exposée à Internet, et les fichiers utilisateurs sont persistants sur S3,
+                    indépendamment du cycle de vie de l'instance EC2.
                 </p>
+                <p class="text-block">
+                    Sur le plan de la sécurité, le principe de moindre privilège est appliqué à deux niveaux :
+                    les Security Groups limitent les flux réseau au strict nécessaire, et le rôle IAM
+                    restreint l'accès S3 au seul bucket du projet, sans aucune clé stockée en clair.
+                </p>
+            </div>
+
+            <!-- Perspectives -->
+            <div class="content-card">
+                <h2>🚀 Perspectives et Améliorations</h2>
 
                 <h3>Évolutions possibles</h3>
                 <ul>
-                    <li><strong>HTTPS :</strong> Ajouter un certificat SSL via AWS Certificate Manager et un Load Balancer pour chiffrer les échanges.</li>
-                    <li><strong>Haute disponibilité :</strong> Activer le mode Multi-AZ sur RDS pour basculement automatique en cas de panne.</li>
-                    <li><strong>Backend Terraform distant :</strong> Stocker le fichier <code>tfstate</code> dans S3 pour permettre le travail en équipe sans conflit.</li>
-                    <li><strong>Ansible :</strong> Compléter Terraform avec Ansible pour la configuration fine de Nextcloud (gestion des utilisateurs, plugins...).</li>
+                    <li>
+                        <strong>Remote state Terraform :</strong> Stocker le fichier d'état
+                        <code>terraform.tfstate</code> dans un bucket S3 avec verrouillage DynamoDB
+                        pour permettre le travail en équipe sans conflits.
+                    </li>
+                    <li>
+                        <strong>HTTPS avec ACM :</strong> Ajouter un certificat SSL/TLS via
+                        AWS Certificate Manager et un Load Balancer pour sécuriser les échanges
+                        entre les utilisateurs et Nextcloud.
+                    </li>
+                    <li>
+                        <strong>AWS Secrets Manager :</strong> Externaliser les credentials de
+                        la base de données (mot de passe RDS) dans AWS Secrets Manager plutôt que
+                        dans les variables Terraform, pour renforcer la sécurité.
+                    </li>
+                    <li>
+                        <strong>Ansible en complément :</strong> Remplacer le script Bash userdata.sh
+                        par un playbook Ansible, plus maintenable, idempotent et facilement modifiable
+                        sans recréer l'instance.
+                    </li>
                 </ul>
 
                 <h3>Ce que je referais différemment</h3>
                 <p class="text-block">
-                    J'aurais ajouté HTTPS dès le départ plutôt qu'en amélioration. En production, exposer une application 
-                    de partage de fichiers en HTTP non chiffré n'est pas acceptable. J'aurais également utilisé 
-                    <strong>AWS Secrets Manager</strong> pour stocker les mots de passe de la base de données 
-                    plutôt que de les passer en variables Terraform.
+                    Je mettrais en place le remote state dès le début du projet.
+                    Travailler avec un <code>tfstate</code> local est risqué : sa suppression
+                    accidentelle ferait perdre à Terraform la connaissance de l'état de l'infrastructure.
+                    Je configurerais également HTTPS dès le départ, car HTTP n'est pas acceptable
+                    pour une solution de stockage de fichiers en production.
                 </p>
             </div>
 
             <!-- Navigation -->
             <div class="project-navigation">
                 <a href="projets.html" class="btn btn-secondary">← Tous les projets</a>
-                <a href="projet1.html" class="btn btn-primary">Voir le Projet 1 →</a>
+                <a href="projet2.html" class="btn btn-primary">Voir le Projet 2 →</a>
             </div>
 
         </div>
