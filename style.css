@@ -2175,3 +2175,118 @@ body {
     font-size: 0.82rem;
     color: #6b7280;
 }
+
+/* ===== ARCHITECTURE LAYERS ===== */
+.architecture-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.arch-layer {
+    display: flex;
+    gap: 1.5rem;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.5rem;
+    align-items: flex-start;
+}
+
+.arch-layer-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.arch-layer-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.arch-layer-content p,
+.arch-layer-content ul {
+    margin: 0.3rem 0;
+    color: #555;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* ===== FILE STRUCTURE ===== */
+.file-structure {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 1.2rem 0 2rem 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #f4f6f8;
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+}
+
+.file-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.file-item strong {
+    display: block;
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
+
+.file-item p {
+    margin: 0.2rem 0 0 0;
+    color: #666;
+    font-size: 0.88rem;
+}
+
+/* ===== CODE LABEL ===== */
+.code-label {
+    background: #2c3e50;
+    color: #ecf0f1;
+    font-size: 0.8rem;
+    font-family: monospace;
+    padding: 0.4rem 1rem;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: -0.5rem;
+}
+
+/* ===== HIGHLIGHT BOX ===== */
+.highlight-box {
+    background: #eaf4fb;
+    border-left: 4px solid #2e86c1;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    color: #1a3a4a;
+    line-height: 1.6;
+}
+
+/* ===== SCHEMA ===== */
+.schema-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.schema-img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.schema-caption {
+    margin-top: 0.8rem;
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+}
