@@ -50,9 +50,11 @@
                 <!-- Carte Projet 1 -->
                 <div class="project-summary-card">
                     <div class="project-number">Projet 1</div>
-                    <h3>Déploiement Automatisé GLPI sur AWS</h3>
+                    <h3>Déploiement Cloud Nextcloud — AWS & Terraform</h3>
                     <p class="project-summary">
-                        Mise en place d'une infrastructure Cloud automatisée pour héberger une solution de gestion de parc (GLPI), utilisant l'Infrastructure as Code.
+                        Déploiement automatisé d'une solution de stockage collaboratif (Nextcloud) 
+                        sur AWS via Terraform. Architecture trois tiers : serveur web EC2, 
+                        base de données RDS et stockage objet S3.
                     </p>
 
                     <div class="project-meta-summary">
@@ -77,20 +79,23 @@
                         <div class="tech-tags-small">
                             <span class="tag-small">Terraform</span>
                             <span class="tag-small">AWS EC2</span>
-                            <span class="tag-small">Bash Scripting</span>
-                            <span class="tag-small">GLPI</span>
+                            <span class="tag-small">AWS RDS</span>
+                            <span class="tag-small">AWS S3</span>
+                            <span class="tag-small">IAM</span>
+                            <span class="tag-small">Bash</span>
                         </div>
                     </div>
 
                     <div class="project-highlights">
                         <h4>Points clés :</h4>
                         <ul>
-                            <li>Provisioning automatique de l'infrastructure (IaC)</li>
-                            <li>Scripting de configuration post-démarrage (User Data)</li>
-                            <li>Gestion de la sécurité réseau (Security Groups)</li>
-                            <li>Déploiement de la stack LAMP et de l'application</li>
+                            <li>Infrastructure multi-couches (EC2 + RDS + S3) déployée par le code</li>
+                            <li>Stockage des fichiers externalisé sur S3 via rôle IAM</li>
+                            <li>Base de données managée isolée en sous-réseau privé</li>
+                            <li>Déploiement reproductible en une commande</li>
                         </ul>
                     </div>
+
 
                     <a href="projet1.html" class="btn btn-primary btn-full">
                         Voir le projet complet →
