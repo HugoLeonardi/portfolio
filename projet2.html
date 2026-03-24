@@ -504,8 +504,8 @@ write mem</code></pre>
                 <h3>Autres évolutions possibles</h3>
                 <ul>
                     <li><strong>ACLs dès le départ :</strong> Mettre en place le filtrage inter-VLAN dès la conception plutôt qu'en évolution, pour que la segmentation soit effective en termes de sécurité et pas seulement logique.</li>
-                    <li><strong>VLAN de gestion dédié :</strong> Créer un VLAN dédié à l'administration des équipements (VLAN natif et accès SSH/Telnet restreint) pour séparer le trafic de gestion du trafic utilisateur.</li>
-                    <li><strong>Documentation du plan d'adressage :</strong> Formaliser un tableau de plan d'adressage complet (réseau, masque, passerelle, plage DHCP) avant de commencer la configuration, pour faciliter le dépannage.</li>
+                    <li><strong>Accès SSH sur les équipements :</strong> Configurer un accès SSH sécurisé sur le routeur et le switch pour remplacer Telnet et sécuriser l'administration à distance (génération de clés RSA, restriction des lignes VTY).</li>
+                    <li><strong>Redondance HSRP :</strong> Ajouter un deuxième routeur et mettre en place le protocole HSRP (<em>Hot Standby Router Protocol</em>) pour assurer la haute disponibilité de la passerelle par défaut en cas de panne du routeur principal.</li>
                 </ul>
             </div>
 
