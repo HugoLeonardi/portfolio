@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique DevOps - Portfolio</title>
+    <title>Veille Technologique - Portfolio BTS SIO SISR</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,32 +30,349 @@
 
     <section class="content-section">
         <div class="container">
-            
-            <!-- Introduction -->
-            <div class="content-card">
-                <h2>Qu'est-ce que le DevOps ?</h2>
-                <p class="text-block">
-                    DevOps est une approche culturelle et technique qui vise à unifier le développement 
-                    logiciel (Dev) et l'administration des infrastructures (Ops). Cette méthodologie permet 
-                    d'améliorer la collaboration entre les équipes, d'accélérer les déploiements et 
-                    d'augmenter la fiabilité des systèmes informatiques.
-                </p>
-                
-                <div class="info-box">
-                    <p>💡 <strong>Et dans l'administration ?</strong> L'administration systèmes et réseaux évolue avec l'intégration des pratiques DevOps, permettant une meilleure automatisation et gestion des infrastructures.</p>
-                </div>
 
+            <!-- Problématique -->
+            <div class="content-card">
+                <h2>Problématique</h2>
                 <div class="info-box">
-                    <p>💡 <strong>Pourquoi cette veille ?</strong> En tant qu'administrateur systèmes et réseaux, 
-                    le DevOps représente l'évolution moderne de notre métier. Comprendre ces pratiques est 
-                    essentiel pour rester compétitif sur le marché du travail.</p>
+                    <p>
+                        💡 <strong>Le DevOps, né d'un besoin de réconciliation entre développeurs et opérationnels, a profondément transformé les pratiques IT.
+                        Mais face à la multiplication des outils et à l'émergence de nouveaux paradigmes, la question se pose :</strong>
+                    </p>
+                    <p style="font-size: 1.1rem; margin-top: 0.75rem; font-style: italic;">
+                        Quels sont les outils fondateurs du DevOps, et par quoi sont-ils progressivement remplacés ou complétés ?
+                    </p>
                 </div>
             </div>
 
-            <!-- Méthodologie de veille -->
+            <!-- Qu'est-ce que le DevOps -->
+            <div class="content-card">
+                <h2>Qu'est-ce que le DevOps ?</h2>
+                <p class="text-block">
+                    Le terme <strong>DevOps</strong> est apparu en 2009, popularisé par Patrick Debois lors des premières DevOpsDays en Belgique.
+                    Il naît d'un constat simple : les équipes de développement (Dev) et d'exploitation (Ops) travaillaient en silos,
+                    avec des objectifs opposés — les devs voulaient livrer vite, les ops voulaient stabiliser.
+                    Résultat : des déploiements lents, des incidents fréquents et une collaboration quasi inexistante.
+                </p>
+                <p class="text-block">
+                    Le DevOps est une approche culturelle et technique qui vise à unifier ces deux mondes.
+                    Il repose sur le modèle <strong>CALMS</strong> :
+                </p>
+
+                <div class="themes-grid">
+                    <div class="theme-card">
+                        <h3>🤝 Culture</h3>
+                        <p class="theme-desc">Partage des responsabilités entre Dev et Ops. Fin des silos, collaboration continue.</p>
+                    </div>
+                    <div class="theme-card">
+                        <h3>⚙️ Automation</h3>
+                        <p class="theme-desc">Automatisation des tests, déploiements, provisionnement d'infrastructure.</p>
+                    </div>
+                    <div class="theme-card">
+                        <h3>📉 Lean</h3>
+                        <p class="theme-desc">Éliminer les gaspillages, livrer de la valeur de façon continue et itérative.</p>
+                    </div>
+                    <div class="theme-card">
+                        <h3>📊 Measurement</h3>
+                        <p class="theme-desc">Mesurer tout : performances, fréquence de déploiement, temps de récupération.</p>
+                    </div>
+                    <div class="theme-card">
+                        <h3>🔗 Sharing</h3>
+                        <p class="theme-desc">Partager les connaissances, les outils et les pratiques entre équipes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Évolution du DevOps -->
+            <div class="content-card">
+                <h2>L'évolution du DevOps (2009 – 2026)</h2>
+                <p class="text-block">
+                    Le DevOps n'a pas émergé d'un coup. Il s'est construit progressivement,
+                    porté par des outils, des crises et des besoins industriels qui ont transformé
+                    la façon dont les équipes IT travaillent.
+                </p>
+
+                <div class="news-timeline">
+                    <div class="news-item">
+                        <div class="news-date">2009 – 2012</div>
+                        <div class="news-content">
+                            <h4>🌱 La naissance du mouvement</h4>
+                            <p>
+                                Patrick Debois organise les premières <strong>DevOpsDays</strong> à Gand (Belgique) en 2009,
+                                donnant un nom à une frustration partagée : développeurs et ops ne se parlaient pas.
+                                En 2012, la publication du livre <em>The Phoenix Project</em> popularise le mouvement
+                                auprès des DSI et des managers, et les premières pratiques CI/CD commencent à s'industrialiser.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">2013 – 2015</div>
+                        <div class="news-content">
+                            <h4>🐳 La révolution des conteneurs</h4>
+                            <p>
+                                Docker est lancé en 2013 et change radicalement la façon d'empaqueter
+                                et de déployer les applications. En 2014, Google open-source <strong>Kubernetes</strong>,
+                                son orchestrateur interne. Les microservices deviennent l'architecture de référence,
+                                remplaçant progressivement les monolithes difficiles à déployer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">2016 – 2018</div>
+                        <div class="news-content">
+                            <h4>⚙️ L'Infrastructure as Code s'impose</h4>
+                            <p>
+                                Terraform (HashiCorp) et Ansible deviennent des standards pour provisionner
+                                et configurer l'infrastructure via du code versionné dans Git.
+                                Kubernetes s'installe comme l'orchestrateur dominant.
+                                La notion de <strong>DevSecOps</strong> émerge : la sécurité doit être intégrée
+                                dès le pipeline CI/CD, et non ajoutée après coup.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">2019 – 2021</div>
+                        <div class="news-content">
+                            <h4>🔀 GitOps et l'observabilité</h4>
+                            <p>
+                                Le <strong>GitOps</strong> s'impose comme paradigme : Git devient la source de vérité
+                                pour l'infrastructure et les déploiements (ArgoCD, Flux CD).
+                                L'observabilité évolue au-delà du simple monitoring : logs, métriques et traces
+                                forment les trois piliers d'un système observable, standardisés par <strong>OpenTelemetry</strong>.
+                                Les service meshes (Istio, Linkerd) gèrent la communication entre microservices.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">2022 – 2023</div>
+                        <div class="news-content">
+                            <h4>🏗️ Platform Engineering et FinOps</h4>
+                            <p>
+                                Face à la complexité croissante des outils DevOps, le <strong>Platform Engineering</strong>
+                                émerge : des équipes dédiées construisent des plateformes internes (IDP)
+                                pour que les développeurs déploient en self-service sans se noyer dans Kubernetes.
+                                En parallèle, le <strong>FinOps</strong> s'impose dans les entreprises qui peinent
+                                à maîtriser leurs dépenses cloud en forte croissance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">2024 – 2026</div>
+                        <div class="news-content">
+                            <h4>🤖 L'IA s'intègre dans la chaîne DevOps</h4>
+                            <p>
+                                GitHub Copilot, puis des outils d'<strong>AIOps</strong>, commencent à assister
+                                les équipes dans l'écriture de pipelines, la détection d'anomalies et la résolution
+                                d'incidents. Le concept d'<em>AI-native operations</em> gagne du terrain :
+                                des agents IA peuvent analyser les logs, suggérer des correctifs et déclencher
+                                des actions automatisées. Le DevOps ne disparaît pas — il se complexifie
+                                et se spécialise, avec des rôles comme <strong>Platform Engineer</strong>
+                                ou <strong>FinOps Practitioner</strong> qui structurent la profession.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outils clés -->
+            <div class="content-card">
+                <h2>Les outils fondateurs du DevOps</h2>
+
+                <div class="themes-grid">
+                    <div class="theme-card">
+                        <h3>🐳 Conteneurisation — Docker</h3>
+                        <p class="theme-desc">
+                            Lancé en 2013, Docker a révolutionné la portabilité des applications.
+                            Plutôt que de déployer sur une machine configurée à la main,
+                            on empaquette l'application et ses dépendances dans un conteneur
+                            qui tourne de façon identique partout.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Images</span>
+                            <span class="tag">Docker Compose</span>
+                            <span class="tag">Registres</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>☸️ Orchestration — Kubernetes</h3>
+                        <p class="theme-desc">
+                            Développé par Google et open-sourcé en 2014, Kubernetes (K8s) automatise
+                            le déploiement, la mise à l'échelle et la gestion des conteneurs.
+                            Il est devenu le standard de fait pour les environnements de production à grande échelle.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Pods</span>
+                            <span class="tag">Helm</span>
+                            <span class="tag">Service Mesh</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>🔄 CI/CD — GitLab CI / GitHub Actions</h3>
+                        <p class="theme-desc">
+                            Les pipelines CI/CD automatisent les étapes entre l'écriture du code et sa mise en production :
+                            tests, build, déploiement. GitLab CI et GitHub Actions ont démocratisé
+                            les pipelines <em>as code</em>, versionnés directement dans le dépôt.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Pipelines</span>
+                            <span class="tag">Tests auto</span>
+                            <span class="tag">Déploiement continu</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>⚙️ Infrastructure as Code</h3>
+                        <p class="theme-desc">
+                            <strong>Terraform</strong> permet de provisionner l'infrastructure (VMs, réseaux, DNS)
+                            via du code déclaratif. <strong>Ansible</strong> prend le relais pour la configuration
+                            des serveurs une fois provisionnés. Les deux sont complémentaires et versionnés dans Git.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Ansible</span>
+                            <span class="tag">Declaratif</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>📊 Monitoring — Prometheus & Grafana</h3>
+                        <p class="theme-desc">
+                            L'observabilité repose sur trois piliers : les <strong>métriques</strong> (Prometheus),
+                            les <strong>logs</strong> (ELK Stack / Loki) et les <strong>traces</strong> (Jaeger, Zipkin).
+                            Grafana centralise tout dans des dashboards et permet l'alerting.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Métriques</span>
+                            <span class="tag">Logs</span>
+                            <span class="tag">Alerting</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>☁️ Cloud — AWS / Azure / GCP</h3>
+                        <p class="theme-desc">
+                            Les grands hyperscalers ont accéléré l'adoption du DevOps en proposant
+                            des services managés (EKS, AKS, GKE) qui évitent de maintenir
+                            soi-même les clusters Kubernetes, et des offres serverless pour aller plus loin.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">IaaS</span>
+                            <span class="tag">PaaS</span>
+                            <span class="tag">Serverless</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challengers et remplaçants -->
+            <div class="content-card">
+                <h2>Les challengers et remplaçants potentiels</h2>
+                <p class="text-block">
+                    L'écosystème DevOps est en constante évolution. Certains outils fondateurs commencent
+                    à être challengés ou complétés par des alternatives plus modernes.
+                </p>
+
+                <div class="themes-grid">
+                    <div class="theme-card">
+                        <h3>🔁 Podman face à Docker</h3>
+                        <p class="theme-desc">
+                            Développé par Red Hat, <strong>Podman</strong> propose une gestion des conteneurs
+                            sans daemon (daemonless) et sans root (rootless), ce qui améliore la sécurité.
+                            Il est compatible avec les commandes Docker et s'impose dans les environnements
+                            d'entreprise soumis à des contraintes de sécurité fortes.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Rootless</span>
+                            <span class="tag">Daemonless</span>
+                            <span class="tag">Sécurité</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>🔁 Nomad face à Kubernetes</h3>
+                        <p class="theme-desc">
+                            <strong>Nomad</strong> (HashiCorp) est un orchestrateur bien plus simple que Kubernetes.
+                            Il gère aussi bien des conteneurs que des applications non-conteneurisées.
+                            Pour des équipes qui trouvent K8s trop complexe, Nomad est une alternative sérieuse.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Simplicité</span>
+                            <span class="tag">Multi-workload</span>
+                            <span class="tag">HashiCorp</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>🔁 Pulumi face à Terraform</h3>
+                        <p class="theme-desc">
+                            <strong>Pulumi</strong> permet d'écrire l'Infrastructure as Code dans de vrais langages
+                            de programmation (Python, TypeScript, Go). Contrairement à Terraform et son langage HCL,
+                            Pulumi permet des logiques plus complexes nativement, au prix d'une courbe d'apprentissage différente.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Python / TS</span>
+                            <span class="tag">IaC</span>
+                            <span class="tag">Flexibilité</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>🔁 OpenTelemetry — standard unifié</h3>
+                        <p class="theme-desc">
+                            <strong>OpenTelemetry</strong> (OTel) s'impose comme le standard ouvert pour instrumenter
+                            les applications (métriques, logs, traces) sans dépendre d'un vendor.
+                            Il remplace progressivement les SDKs propriétaires de Datadog, Jaeger ou New Relic.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Observabilité</span>
+                            <span class="tag">Standard ouvert</span>
+                            <span class="tag">Vendor-neutral</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>🆕 Platform Engineering</h3>
+                        <p class="theme-desc">
+                            Évolution du DevOps, le <strong>Platform Engineering</strong> consiste à créer
+                            des plateformes internes (IDP — Internal Developer Platform) pour abstraire
+                            la complexité des outils DevOps et permettre aux développeurs de déployer
+                            en self-service. Des outils comme Backstage (Spotify) illustrent cette tendance.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">IDP</span>
+                            <span class="tag">Self-service</span>
+                            <span class="tag">Backstage</span>
+                        </div>
+                    </div>
+
+                    <div class="theme-card">
+                        <h3>🆕 FinOps — la gestion des coûts cloud</h3>
+                        <p class="theme-desc">
+                            Avec l'explosion des dépenses cloud, le <strong>FinOps</strong> est apparu
+                            comme une discipline à part entière. Il s'agit d'optimiser les coûts
+                            cloud en responsabilisant les équipes sur leur consommation,
+                            en combinant pratiques financières et culture DevOps.
+                        </p>
+                        <div class="theme-tags">
+                            <span class="tag">Coûts cloud</span>
+                            <span class="tag">Optimisation</span>
+                            <span class="tag">FinOps Foundation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sources -->
             <div class="content-card">
                 <h2>Ma Méthodologie de Veille</h2>
-                
+
                 <h3>Sources d'information</h3>
                 <div class="veille-sources">
                     <div class="source-category">
@@ -93,7 +410,7 @@
                             <li><a href="https://Udemy.com" target="_blank">Formation Udemy</a></li>
                             <li><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/" target="_blank">CKA – Certified Kubernetes Administrator</a></li>
                             <li><a href="https://aws.amazon.com/fr/certification/certified-solutions-architect-associate/" target="_blank">AWS Solutions Architect Associate</a></li>
-                            <li><a href="https://learn.finops.org/path/finops-certified-practitioner-self-paced" target="_blank">FinOps Practitioner/</a></li>
+                            <li><a href="https://learn.finops.org/path/finops-certified-practitioner-self-paced" target="_blank">FinOps Practitioner</a></li>
                             <li><a href="https://developer.hashicorp.com/certifications/infrastructure-automation" target="_blank">Terraform Associate (HashiCorp)</a></li>
                         </ul>
                     </div>
@@ -137,241 +454,28 @@
                 </div>
             </div>
 
-            <!-- Thématiques suivies -->
+            <!-- Ressources -->
             <div class="content-card">
-                <h2>Thématiques Suivies</h2>
-                
-                <div class="themes-grid">
-                    <div class="theme-card">
-                        <h3>🐳 Conteneurisation</h3>
-                        <p><strong>Technologies :</strong> Docker, Podman, cri-o</p>
-                        <p class="theme-desc">
-                            Suivi des évolutions de Docker et de ses alternatives comme Podman. 
-                            Veille sur les bonnes pratiques de sécurité et d'optimisation des images.
-                        </p>
-
-                        <div class="theme-tags">
-                            <span class="tag">Docker Compose</span>
-                            <span class="tag">Multi-stage builds</span>
-                            <span class="tag">Sécurité</span>
-                        </div>
-                    </div>
-
-                    <div class="theme-card">
-                        <h3>☸️ Orchestration</h3>
-                        <p><strong>Technologies :</strong> Kubernetes, Docker Swarm, Nomad</p>
-                        <p class="theme-desc">
-                            Apprentissage de Kubernetes (K8s) pour l'orchestration de conteneurs à grande échelle. 
-                            Suivi des versions et des nouvelles fonctionnalités.
-                        </p>
-                        <div></div>
-                        <div class="theme-tags">
-                            <span class="tag">K8s</span>
-                            <span class="tag">Helm</span>
-                            <span class="tag">Service Mesh</span>
-                        </div>
-                    </div>
-
-                    <div class="theme-card">
-                        <h3>🔄 CI/CD</h3>
-                        <p><strong>Technologies :</strong> GitLab CI, Jenkins, GitHub Actions</p>
-                        <p class="theme-desc">
-                            Automatisation des pipelines de déploiement continu. Intégration des tests 
-                            automatisés et déploiement sur différents environnements.
-                        </p>
-                        <div class="theme-tags">
-                            <span class="tag">Pipelines</span>
-                            <span class="tag">Tests auto</span>
-                            <span class="tag">Déploiement</span>
-                        </div>
-                    </div>
-
-                    <div class="theme-card">
-                        <h3>⚙️ Infrastructure as Code</h3>
-                        <p><strong>Technologies :</strong> Ansible, Terraform</p>
-                        <p class="theme-desc">
-                            Gestion de l'infrastructure via du code versionné. Automatisation 
-                            du provisionnement et de la configuration des serveurs.
-                        </p>
-                        <div class="theme-tags">
-                            <span class="tag">Ansible</span>
-                            <span class="tag">Terraform</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                    </div>
-
-                    <div class="theme-card">
-                        <h3>📊 Monitoring & Observabilité</h3>
-                        <p><strong>Technologies :</strong> Prometheus, Grafana, ELK Stack</p>
-                        <p class="theme-desc">
-                            Surveillance des infrastructures et applications. Collecte de métriques, 
-                            logs et traces pour anticiper les problèmes.
-                        </p>
-                        <div class="theme-tags">
-                            <span class="tag">Métriques</span>
-                            <span class="tag">Alerting</span>
-                            <span class="tag">Dashboards</span>
-                        </div>
-                    </div>
-
-                    <div class="theme-card">
-                        <h3>☁️ Cloud Computing</h3>
-                        <p><strong>Plateformes :</strong> AWS, Azure, Google Cloud</p>
-                        <p class="theme-desc">
-                            Évolution des services cloud et des modèles serverless. 
-                            Comparaison des offres et des meilleures pratiques.
-                        </p>
-                        <div class="theme-tags">
-                            <span class="tag">IaaS</span>
-                            <span class="tag">PaaS</span>
-                            <span class="tag">Serverless</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Actualités récentes -->
-             <!--
-            <div class="content-card">
-                <h2>📰 Actualités et Tendances Récentes</h2>
-                
-                <div class="news-timeline">
-                    <div class="news-item">
-                        <div class="news-date">Janvier 2024</div>
-                        <div class="news-content">
-                            <h4>🚀 Docker Desktop 4.27 - Nouvelles fonctionnalités</h4>
-                            <p>
-                                Docker a publié une mise à jour majeure incluant l'amélioration des performances 
-                                sur les systèmes ARM (Apple Silicon) et une meilleure intégration avec 
-                                les registres d'entreprise.
-                            </p>
-                            <p class="news-impact">
-                                <strong>Impact :</strong> Amélioration de l'expérience développeur sur Mac M1/M2/M3
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="news-item">
-                        <div class="news-date">Décembre 2023</div>
-                        <div class="news-content">
-                            <h4>☸️ Kubernetes 1.29 "Mandala"</h4>
-                            <p>
-                                Sortie de Kubernetes 1.29 avec des améliorations sur la sécurité des pods, 
-                                le support natif des sidecars et l'optimisation de la planification des workloads.
-                            </p>
-                            <p class="news-impact">
-                                <strong>Impact :</strong> Meilleure gestion des conteneurs sidecar et sécurité renforcée
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="news-item">
-                        <div class="news-date">Novembre 2023</div>
-                        <div class="news-content">
-                            <h4>🔐 Adoption massive de GitOps</h4>
-                            <p>
-                                Le GitOps devient un standard dans l'industrie avec des outils comme ArgoCD 
-                                et Flux CD qui simplifient le déploiement déclaratif via Git.
-                            </p>
-                            <p class="news-impact">
-                                <strong>Impact :</strong> Nouvelle approche de déploiement à maîtriser
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="news-item">
-                        <div class="news-date">Octobre 2023</div>
-                        <div class="news-content">
-                            <h4>🤖 IA et DevOps - GitHub Copilot for CLI</h4>
-                            <p>
-                                GitHub lance Copilot for CLI qui permet de générer des commandes shell 
-                                complexes via des prompts en langage naturel.
-                            </p>
-                            <p class="news-impact">
-                                <strong>Impact :</strong> L'IA s'intègre dans les outils DevOps quotidiens
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
--->
-            <!-- Expérimentations personnelles -->
-            <div class="content-card">
-                <h2>Mes Expérimentations</h2>
+                <h2>Ressources sélectionnées</h2>
                 <p class="text-block">
-                    Pour approfondir mes connaissances, je mets en pratique les concepts découverts 
-                    lors de ma veille en créant des environnements de test.
+                    Articles, vidéos et documents en lien direct avec ma veille DevOps.
                 </p>
 
-                <div class="experiments-grid">
-                    <div class="experiment-card">
-                        <span class="experiment-status done">✅ Réalisé</span>
-                        <h4>Lab AWS avec Terraform</h4>
-                        <p>
-                            Création d'une infrastructure cloud sur AWS en utilisant Terraform pour provisionner 
-                            des instances EC2, des VPC et des groupes de sécurité.
-                        </p>
-                        <p class="experiment-learning">
-                            <strong>Apprentissage :</strong> Compréhension de l'Infrastructure as Code et du cloud AWS.
-                        </p>
+                <div class="veille-sources">
+                    <div class="source-category">
+                        <h4>📰 Articles</h4>
+                        <ul>
+                            <!-- Ajoutez vos liens ici -->
+                            <li><em>À compléter...</em></li>
+                        </ul>
                     </div>
 
-                    <div class="experiment-card">
-                        <span class="experiment-status progress">🔄 En cours</span>
-                        <h4>Mise en place d'un cluster Kubernetes</h4>
-                        <p>
-                            Déploiement d'applications dans un cluster Kubernetes local pour comprendre 
-                            les concepts de pods, services, deployments et ingress.
-                        </p>
-                        <p class="experiment-learning">
-                            <strong>Objectif :</strong> Maîtriser les bases de l'orchestration K8s.
-                        </p>
-                    </div>
-
-                    <div class="experiment-card">
-                        <span class="experiment-status planned">📅 Prévu</span>
-                        <h4>Approfondissement de Docker et Python (séparement)</h4>
-                        <p>
-                            Création de projets personnels pour automatiser des tâches d'administration 
-                            système avec Python et conteneuriser ces applications avec Docker.
-                        </p>
-                        <p class="experiment-learning">
-                            <strong>Objectif :</strong> Industrialiser la gestion de parc serveurs.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Apports professionnels -->
-            <div class="content-card">
-                <h2>Apports pour mon Activité Professionnelle</h2>
-                
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <span class="benefit-icon">⚡</span>
-                        <h4>Efficacité opérationnelle</h4>
-                        <p>
-                            L'automatisation DevOps permet de réduire les tâches répétitives et d'accélérer 
-                            les déploiements tout en limitant les erreurs humaines.
-                        </p>
-                    </div>
-
-                    <div class="benefit-item">
-                        <span class="benefit-icon">🔒</span>
-                        <h4>Sécurité renforcée</h4>
-                        <p>
-                            L'Infrastructure as Code permet d'intégrer la sécurité 
-                            dès la conception (DevSecOps) et de tracer toutes les modifications.
-                        </p>
-                    </div>
-
-                    <div class="benefit-item">
-                        <span class="benefit-icon">📈</span>
-                        <h4>Montée en compétences</h4>
-                        <p>
-                            Maîtriser les outils DevOps modernes augmente mon employabilité et me permet 
-                            de m'adapter aux évolutions du métier d'administrateur systèmes.
-                        </p>
+                    <div class="source-category">
+                        <h4>🎬 Vidéos</h4>
+                        <ul>
+                            <!-- Ajoutez vos liens ici -->
+                            <li><em>À compléter...</em></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -380,22 +484,21 @@
             <div class="content-card conclusion">
                 <h2>Conclusion</h2>
                 <p class="text-block">
-                    Cette veille technologique sur le DevOps me permet de rester à jour sur les pratiques 
-                    modernes d'administration systèmes et réseaux. Elle m'aide à comprendre comment 
-                    l'automatisation, la conteneurisation et les méthodologies agiles transforment notre métier.
+                    Le DevOps n'est pas une technologie figée mais un écosystème en permanente évolution.
+                    Les outils fondateurs comme Docker, Kubernetes ou Terraform restent des références,
+                    mais ils sont progressivement challengés ou complétés par des alternatives
+                    qui adressent leurs limites — complexité, sécurité, coûts.
                 </p>
                 <p class="text-block">
-                    En tant que futur administrateur systèmes, maîtriser ces concepts est essentiel pour 
-                    évoluer professionnellement et répondre aux besoins actuels des entreprises qui cherchent 
-                    à moderniser leur infrastructure IT.
+                    En tant que futur administrateur systèmes, comprendre ces évolutions est essentiel
+                    pour s'adapter aux besoins des entreprises et anticiper les compétences demandées sur le marché.
                 </p>
-                
+
                 <div class="highlight-box">
                     <p>
-                        💡 <strong>Perspectives :</strong> Je continue d'approfondir mes connaissances via 
-                        des certifications (Docker Certified Associate, Kubernetes Administrator) et la mise 
-                        en pratique dans mes projets personnels et professionnels.
-                        Je suis également intéressé par le FinOps qui est un marché en pleine croissance dans le domaine du cloud computing, et je prévois de me certifier en tant que FinOps Practitioner pour mieux comprendre la gestion financière des ressources cloud.
+                        💡 <strong>Perspectives :</strong> Je m'intéresse particulièrement au <strong>FinOps</strong>
+                        comme évolution naturelle du cloud DevOps, ainsi qu'à la montée du <strong>Platform Engineering</strong>
+                        qui redéfinit le rôle des équipes Ops dans les grandes organisations.
                     </p>
                 </div>
             </div>
