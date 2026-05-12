@@ -1281,6 +1281,18 @@ a {
     background: #dbeafe;
 }
 
+.mission-confidential {
+    display: inline-block;
+    margin-top: 0.875rem;
+    padding: 0.4rem 0.875rem;
+    background: #fafafa;
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
 /* ==========================================
    PAGE VEILLE
    ========================================== */
@@ -1503,6 +1515,65 @@ a {
     font-size: 0.9rem;
     color: var(--text-dark);
     line-height: 1.6;
+}
+
+/* ==========================================
+   SWOT
+   ========================================== */
+
+.swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.swot-cell {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.swot-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.swot-forces       { border-top: 3px solid #10b981; }
+.swot-faiblesses   { border-top: 3px solid #ef4444; }
+.swot-opportunites { border-top: 3px solid #2563eb; }
+.swot-menaces      { border-top: 3px solid #f59e0b; }
+
+.swot-forces       .swot-title { color: #059669; }
+.swot-faiblesses   .swot-title { color: #dc2626; }
+.swot-opportunites .swot-title { color: #2563eb; }
+.swot-menaces      .swot-title { color: #d97706; }
+
+.swot-cell ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.swot-cell ul li {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    padding: 0.3rem 0 0.3rem 1rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.swot-cell ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--border-color);
 }
 
 /* ==========================================
@@ -1790,7 +1861,8 @@ a {
     .objectives-grid,
     .competences-grid,
     .themes-grid,
-    .veille-sources {
+    .veille-sources,
+    .swot-grid {
         grid-template-columns: 1fr;
     }
 
