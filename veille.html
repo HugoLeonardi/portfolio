@@ -86,11 +86,7 @@
             <!-- Évolution du DevOps -->
             <div class="content-card">
                 <h2>L'évolution du DevOps</h2>
-                <p class="text-block">
-                    Le DevOps ne s'est pas construit par accumulation d'outils, mais par une série de
-                    <strong>ruptures conceptuelles</strong> : chaque étape naît des limites de la précédente,
-                    en réponse à un problème concret que les pratiques existantes ne savaient plus résoudre.
-                </p>
+                <p class="text-block">Chaque étape naît des limites de la précédente — une rupture répondant à un problème concret.</p>
 
                 <div class="evolution-steps">
 
@@ -99,8 +95,10 @@
                             <span class="evolution-num">1</span>
                             <span class="evolution-title">De l'artisanat à la reproductibilité</span>
                         </div>
-                        <p class="evolution-tension">Un serveur configuré à la main est unique, fragile et non auditable. Deux environnements censés être identiques ne le sont jamais vraiment — source d'innombrables "ça marche sur ma machine".</p>
-                        <p class="evolution-response">L'<strong>Infrastructure as Code</strong> répond à ce problème en versionnant l'infrastructure dans Git comme du code applicatif. L'infra devient reproductible, testable, partageable — et surtout : détruite et recréée à l'identique en une commande.</p>
+                        <div class="evolution-compact">
+                            <p><span class="evo-tag evo-problem">Problème</span> Deux serveurs configurés à la main ne sont jamais vraiment identiques.</p>
+                            <p><span class="evo-tag evo-solution">Réponse</span> L'<strong>Infrastructure as Code</strong> versionne l'infra dans Git — reproductible et recréée à l'identique en une commande.</p>
+                        </div>
                     </div>
 
                     <div class="evolution-step">
@@ -108,8 +106,10 @@
                             <span class="evolution-num">2</span>
                             <span class="evolution-title">De la livraison rare à la livraison continue</span>
                         </div>
-                        <p class="evolution-tension">Déployer rarement, c'est déployer gros. Déployer gros, c'est déployer risqué. Les équipes repoussaient les mises en production parce que chaque déploiement manuel était une source d'incidents potentiels.</p>
-                        <p class="evolution-response">Le <strong>CI/CD</strong> inverse la logique : en automatisant l'intégralité du pipeline (tests, build, déploiement), on déploie souvent, en petites unités, avec un filet de sécurité automatisé. Le risque de chaque déploiement diminue à mesure que leur fréquence augmente.</p>
+                        <div class="evolution-compact">
+                            <p><span class="evo-tag evo-problem">Problème</span> Déployer rarement, c'est déployer gros — donc risqué.</p>
+                            <p><span class="evo-tag evo-solution">Réponse</span> Le <strong>CI/CD</strong> automatise tests et déploiements : on livre souvent, en petites unités, avec un filet de sécurité.</p>
+                        </div>
                     </div>
 
                     <div class="evolution-step">
@@ -117,8 +117,10 @@
                             <span class="evolution-num">3</span>
                             <span class="evolution-title">De la détection à la compréhension</span>
                         </div>
-                        <p class="evolution-tension">Dans un système distribué, savoir qu'il y a un problème ne suffit plus. Un simple dashboard "rouge/vert" ne dit pas pourquoi un service est lent quand cent microservices communiquent entre eux.</p>
-                        <p class="evolution-response">L'<strong>observabilité</strong> va au-delà du monitoring : elle repose sur trois piliers complémentaires — métriques (ce qui se passe), logs (ce qui s'est passé), traces (comment une requête a traversé le système). L'objectif n'est plus de détecter, mais de comprendre.</p>
+                        <div class="evolution-compact">
+                            <p><span class="evo-tag evo-problem">Problème</span> Dans un système distribué, savoir qu'il y a un problème ne suffit plus.</p>
+                            <p><span class="evo-tag evo-solution">Réponse</span> L'<strong>Observabilité</strong> (métriques, logs, traces) permet de comprendre <em>pourquoi</em>, pas seulement <em>quoi</em>.</p>
+                        </div>
                     </div>
 
                     <div class="evolution-step">
@@ -126,8 +128,10 @@
                             <span class="evolution-num">4</span>
                             <span class="evolution-title">De la sécurité en bout de chaîne au DevSecOps</span>
                         </div>
-                        <p class="evolution-tension">La sécurité ajoutée après déploiement coûte dix fois plus cher à corriger qu'en amont. Dans un pipeline CI/CD qui livre plusieurs fois par jour, un audit de sécurité mensuel est structurellement obsolète.</p>
-                        <p class="evolution-response">Le <strong>DevSecOps</strong> intègre les contrôles de sécurité directement dans le pipeline : analyse de vulnérabilités, scan des images Docker, vérification des secrets, tests de conformité. La sécurité cesse d'être un garde-barrière pour devenir un filet continu.</p>
+                        <div class="evolution-compact">
+                            <p><span class="evo-tag evo-problem">Problème</span> Un audit de sécurité mensuel est obsolète quand on déploie plusieurs fois par jour.</p>
+                            <p><span class="evo-tag evo-solution">Réponse</span> Le <strong>DevSecOps</strong> intègre scans et contrôles (vulnérabilités, secrets, images Docker) directement dans le pipeline.</p>
+                        </div>
                     </div>
 
                     <div class="evolution-step">
@@ -135,8 +139,10 @@
                             <span class="evolution-num">5</span>
                             <span class="evolution-title">De la complexité subie à la plateforme abstraite</span>
                         </div>
-                        <p class="evolution-tension">Les outils DevOps ont résolu des problèmes, puis créé les leurs. Kubernetes, Terraform, les service meshes… les développeurs passaient plus de temps à gérer l'infrastructure qu'à écrire du code métier. L'outillage était devenu le problème.</p>
-                        <p class="evolution-response">Le <strong>Platform Engineering</strong> répond en construisant des plateformes internes qui abstraient cette complexité. Les développeurs déploient en self-service sans connaître Kubernetes. L'infrastructure redevient invisible — ce qu'elle aurait toujours dû être.</p>
+                        <div class="evolution-compact">
+                            <p><span class="evo-tag evo-problem">Problème</span> Les devs passent plus de temps à gérer l'infra qu'à écrire du code métier.</p>
+                            <p><span class="evo-tag evo-solution">Réponse</span> Le <strong>Platform Engineering</strong> abstrait cette complexité : déploiement en self-service sans toucher à Kubernetes.</p>
+                        </div>
                     </div>
 
                     <div class="evolution-step">
@@ -144,8 +150,10 @@
                             <span class="evolution-num">6</span>
                             <span class="evolution-title">De l'analyse humaine à l'assistance intelligente</span>
                         </div>
-                        <p class="evolution-tension">La volumétrie des logs, alertes et incidents dans les systèmes modernes dépasse ce qu'un humain peut analyser en temps réel. Les équipes ops passent plus de temps à trier le bruit qu'à résoudre les vrais problèmes.</p>
-                        <p class="evolution-response">L'<strong>AIOps</strong> introduit des agents capables de corréler des signaux, détecter des anomalies et suggérer des actions. Ce n'est pas un remplacement — c'est une amplification : l'humain reste décideur, l'IA gère le volume. La question ouverte est jusqu'où ira l'autonomie de ces agents.</p>
+                        <div class="evolution-compact">
+                            <p><span class="evo-tag evo-problem">Problème</span> Le volume de logs et d'alertes dépasse ce qu'un humain peut analyser en temps réel.</p>
+                            <p><span class="evo-tag evo-solution">Réponse</span> L'<strong>AIOps</strong> corrèle les signaux et suggère des actions — l'humain reste décideur, l'IA gère le volume.</p>
+                        </div>
                     </div>
 
                 </div>

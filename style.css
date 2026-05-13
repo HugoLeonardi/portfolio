@@ -1468,21 +1468,44 @@ a {
     font-size: 0.975rem;
 }
 
-.evolution-tension {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 0.625rem;
-    padding-left: 0.875rem;
-    border-left: 2px solid var(--border-color);
+.evolution-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
 }
 
-.evolution-response {
+.evolution-compact p {
     font-size: 0.875rem;
     color: var(--text-dark);
-    line-height: 1.65;
+    line-height: 1.55;
     margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.evo-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.evo-problem {
+    background: #fff1f1;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.evo-solution {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
 }
 
 /* Timeline actualités */
