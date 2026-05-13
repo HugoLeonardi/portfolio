@@ -1425,6 +1425,66 @@ a {
     font-size: 0.78rem;
 }
 
+/* Évolution conceptuelle DevOps */
+.evolution-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    margin-top: 1.5rem;
+}
+
+.evolution-step {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+}
+
+.evolution-step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 0.875rem;
+}
+
+.evolution-num {
+    width: 26px;
+    height: 26px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.evolution-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.975rem;
+}
+
+.evolution-tension {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 0.625rem;
+    padding-left: 0.875rem;
+    border-left: 2px solid var(--border-color);
+}
+
+.evolution-response {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    line-height: 1.65;
+    margin: 0;
+}
+
 /* Timeline actualités */
 .news-timeline {
     position: relative;

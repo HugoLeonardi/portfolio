@@ -85,97 +85,69 @@
 
             <!-- Évolution du DevOps -->
             <div class="content-card">
-                <h2>L'évolution du DevOps (2009 – 2026)</h2>
+                <h2>L'évolution du DevOps</h2>
                 <p class="text-block">
-                    Le DevOps n'a pas émergé d'un coup. Il s'est construit progressivement,
-                    porté par des outils, des crises et des besoins industriels qui ont transformé
-                    la façon dont les équipes IT travaillent.
+                    Le DevOps ne s'est pas construit par accumulation d'outils, mais par une série de
+                    <strong>ruptures conceptuelles</strong> : chaque étape naît des limites de la précédente,
+                    en réponse à un problème concret que les pratiques existantes ne savaient plus résoudre.
                 </p>
 
-                <div class="news-timeline">
-                    <div class="news-item">
-                        <div class="news-date">2009 – 2012</div>
-                        <div class="news-content">
-                            <h4>🌱 La naissance du mouvement</h4>
-                            <p>
-                                Patrick Debois organise les premières <strong>DevOpsDays</strong> à Gand (Belgique) en 2009,
-                                donnant un nom à une frustration partagée : développeurs et ops ne se parlaient pas.
-                                En 2012, la publication du livre <em>The Phoenix Project</em> popularise le mouvement
-                                auprès des DSI et des managers, et les premières pratiques CI/CD commencent à s'industrialiser.
-                            </p>
+                <div class="evolution-steps">
+
+                    <div class="evolution-step">
+                        <div class="evolution-step-header">
+                            <span class="evolution-num">1</span>
+                            <span class="evolution-title">De l'artisanat à la reproductibilité</span>
                         </div>
+                        <p class="evolution-tension">Un serveur configuré à la main est unique, fragile et non auditable. Deux environnements censés être identiques ne le sont jamais vraiment — source d'innombrables "ça marche sur ma machine".</p>
+                        <p class="evolution-response">L'<strong>Infrastructure as Code</strong> répond à ce problème en versionnant l'infrastructure dans Git comme du code applicatif. L'infra devient reproductible, testable, partageable — et surtout : détruite et recréée à l'identique en une commande.</p>
                     </div>
 
-                    <div class="news-item">
-                        <div class="news-date">2013 – 2015</div>
-                        <div class="news-content">
-                            <h4>🐳 La révolution des conteneurs</h4>
-                            <p>
-                                Docker est lancé en 2013 et change radicalement la façon d'empaqueter
-                                et de déployer les applications. En 2014, Google open-source <strong>Kubernetes</strong>,
-                                son orchestrateur interne. Les microservices deviennent l'architecture de référence,
-                                remplaçant progressivement les monolithes difficiles à déployer.
-                            </p>
+                    <div class="evolution-step">
+                        <div class="evolution-step-header">
+                            <span class="evolution-num">2</span>
+                            <span class="evolution-title">De la livraison rare à la livraison continue</span>
                         </div>
+                        <p class="evolution-tension">Déployer rarement, c'est déployer gros. Déployer gros, c'est déployer risqué. Les équipes repoussaient les mises en production parce que chaque déploiement manuel était une source d'incidents potentiels.</p>
+                        <p class="evolution-response">Le <strong>CI/CD</strong> inverse la logique : en automatisant l'intégralité du pipeline (tests, build, déploiement), on déploie souvent, en petites unités, avec un filet de sécurité automatisé. Le risque de chaque déploiement diminue à mesure que leur fréquence augmente.</p>
                     </div>
 
-                    <div class="news-item">
-                        <div class="news-date">2016 – 2018</div>
-                        <div class="news-content">
-                            <h4>⚙️ L'Infrastructure as Code s'impose</h4>
-                            <p>
-                                Terraform (HashiCorp) et Ansible deviennent des standards pour provisionner
-                                et configurer l'infrastructure via du code versionné dans Git.
-                                Kubernetes s'installe comme l'orchestrateur dominant.
-                                La notion de <strong>DevSecOps</strong> émerge : la sécurité doit être intégrée
-                                dès le pipeline CI/CD, et non ajoutée après coup.
-                            </p>
+                    <div class="evolution-step">
+                        <div class="evolution-step-header">
+                            <span class="evolution-num">3</span>
+                            <span class="evolution-title">De la détection à la compréhension</span>
                         </div>
+                        <p class="evolution-tension">Dans un système distribué, savoir qu'il y a un problème ne suffit plus. Un simple dashboard "rouge/vert" ne dit pas pourquoi un service est lent quand cent microservices communiquent entre eux.</p>
+                        <p class="evolution-response">L'<strong>observabilité</strong> va au-delà du monitoring : elle repose sur trois piliers complémentaires — métriques (ce qui se passe), logs (ce qui s'est passé), traces (comment une requête a traversé le système). L'objectif n'est plus de détecter, mais de comprendre.</p>
                     </div>
 
-                    <div class="news-item">
-                        <div class="news-date">2019 – 2021</div>
-                        <div class="news-content">
-                            <h4>🔀 GitOps et l'observabilité</h4>
-                            <p>
-                                Le <strong>GitOps</strong> s'impose comme paradigme : Git devient la source de vérité
-                                pour l'infrastructure et les déploiements (ArgoCD, Flux CD).
-                                L'observabilité évolue au-delà du simple monitoring : logs, métriques et traces
-                                forment les trois piliers d'un système observable, standardisés par <strong>OpenTelemetry</strong>.
-                                Les service meshes (Istio, Linkerd) gèrent la communication entre microservices.
-                            </p>
+                    <div class="evolution-step">
+                        <div class="evolution-step-header">
+                            <span class="evolution-num">4</span>
+                            <span class="evolution-title">De la sécurité en bout de chaîne au DevSecOps</span>
                         </div>
+                        <p class="evolution-tension">La sécurité ajoutée après déploiement coûte dix fois plus cher à corriger qu'en amont. Dans un pipeline CI/CD qui livre plusieurs fois par jour, un audit de sécurité mensuel est structurellement obsolète.</p>
+                        <p class="evolution-response">Le <strong>DevSecOps</strong> intègre les contrôles de sécurité directement dans le pipeline : analyse de vulnérabilités, scan des images Docker, vérification des secrets, tests de conformité. La sécurité cesse d'être un garde-barrière pour devenir un filet continu.</p>
                     </div>
 
-                    <div class="news-item">
-                        <div class="news-date">2022 – 2023</div>
-                        <div class="news-content">
-                            <h4>🏗️ Platform Engineering et FinOps</h4>
-                            <p>
-                                Face à la complexité croissante des outils DevOps, le <strong>Platform Engineering</strong>
-                                émerge : des équipes dédiées construisent des plateformes internes (IDP)
-                                pour que les développeurs déploient en self-service sans se noyer dans Kubernetes.
-                                En parallèle, le <strong>FinOps</strong> s'impose dans les entreprises qui peinent
-                                à maîtriser leurs dépenses cloud en forte croissance.
-                            </p>
+                    <div class="evolution-step">
+                        <div class="evolution-step-header">
+                            <span class="evolution-num">5</span>
+                            <span class="evolution-title">De la complexité subie à la plateforme abstraite</span>
                         </div>
+                        <p class="evolution-tension">Les outils DevOps ont résolu des problèmes, puis créé les leurs. Kubernetes, Terraform, les service meshes… les développeurs passaient plus de temps à gérer l'infrastructure qu'à écrire du code métier. L'outillage était devenu le problème.</p>
+                        <p class="evolution-response">Le <strong>Platform Engineering</strong> répond en construisant des plateformes internes qui abstraient cette complexité. Les développeurs déploient en self-service sans connaître Kubernetes. L'infrastructure redevient invisible — ce qu'elle aurait toujours dû être.</p>
                     </div>
 
-                    <div class="news-item">
-                        <div class="news-date">2024 – 2026</div>
-                        <div class="news-content">
-                            <h4>🤖 L'IA s'intègre dans la chaîne DevOps</h4>
-                            <p>
-                                GitHub Copilot, puis des outils d'<strong>AIOps</strong>, commencent à assister
-                                les équipes dans l'écriture de pipelines, la détection d'anomalies et la résolution
-                                d'incidents. Le concept d'<em>AI-native operations</em> gagne du terrain :
-                                des agents IA peuvent analyser les logs, suggérer des correctifs et déclencher
-                                des actions automatisées. Le DevOps ne disparaît pas — il se complexifie
-                                et se spécialise, avec des rôles comme <strong>Platform Engineer</strong>
-                                ou <strong>FinOps Practitioner</strong> qui structurent la profession.
-                            </p>
+                    <div class="evolution-step">
+                        <div class="evolution-step-header">
+                            <span class="evolution-num">6</span>
+                            <span class="evolution-title">De l'analyse humaine à l'assistance intelligente</span>
                         </div>
+                        <p class="evolution-tension">La volumétrie des logs, alertes et incidents dans les systèmes modernes dépasse ce qu'un humain peut analyser en temps réel. Les équipes ops passent plus de temps à trier le bruit qu'à résoudre les vrais problèmes.</p>
+                        <p class="evolution-response">L'<strong>AIOps</strong> introduit des agents capables de corréler des signaux, détecter des anomalies et suggérer des actions. Ce n'est pas un remplacement — c'est une amplification : l'humain reste décideur, l'IA gère le volume. La question ouverte est jusqu'où ira l'autonomie de ces agents.</p>
                     </div>
+
                 </div>
             </div>
 
@@ -450,32 +422,6 @@
                             <strong>Mensuel (2-3h)</strong>
                             <p>Mise en pratique : tests de nouvelles technologies en environnement virtuel</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ressources -->
-            <div class="content-card">
-                <h2>Ressources sélectionnées</h2>
-                <p class="text-block">
-                    Articles, vidéos et documents en lien direct avec ma veille DevOps.
-                </p>
-
-                <div class="veille-sources">
-                    <div class="source-category">
-                        <h4>📰 Articles</h4>
-                        <ul>
-                            <!-- Ajoutez vos liens ici -->
-                            <li><em>À compléter...</em></li>
-                        </ul>
-                    </div>
-
-                    <div class="source-category">
-                        <h4>🎬 Vidéos</h4>
-                        <ul>
-                            <!-- Ajoutez vos liens ici -->
-                            <li><em>À compléter...</em></li>
-                        </ul>
                     </div>
                 </div>
             </div>
